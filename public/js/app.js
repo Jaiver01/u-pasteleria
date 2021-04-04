@@ -18,6 +18,25 @@ $(document).ready(function() {
                         }
                     });
                 });
+            }, put: (url, args) => {
+                return new Promise((resolve, reject) => {
+                    $.ajax({
+                        type: 'PUT',
+                        url: `http://localhost:3000/${url}`,
+                        contentType: 'application/json',
+                        data: JSON.stringify(args),
+                        beforeSend: function() {
+                            console.log("Procesando, espere por favor...");
+                        }, error: function(e) {
+                            console.error('Ocurrió un error al porcesar la petición:', e);
+                            reject('Ocurrió un error al porcesar la petición.');
+                        }, success: function(response) {
+                            resolve(response);
+                        }, complete: function(r) {
+                            console.log("Terminado");
+                        }
+                    });
+                });
             }
         },
         drawTemplate: (template, data, container) => {
@@ -34,12 +53,17 @@ $(document).ready(function() {
         $('.address').text(await app.request.get('address'));
     }
 
-    const multiplicar = (base) => {
+    const multiplicar = async (base) => {
         $('#result #base').text(base);
 
+        let data = `Tabla\n\n\nLa base usada es ${base}\n\n`;
         for (let i = 1; i <= 10; i++) {
             app.drawTemplate('row', { base, num: i, res: (base * i) }, $('#result table'));
+            data += `${base} * ${i} = ${base * i}\n`;
         }
+
+        const res = await app.request.put('writeFile', { name: `tabla - ${base} - ${new Date().getTime()}.txt`, data });
+        console.log(res);
     }
 
     $('#goto-home').on('click', function() {
