@@ -1,0 +1,100 @@
+body {
+    font-family: Century Gothic,Source Sans Pro;
+}
+    
+header {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+header .logo {
+    margin-top: 10px;
+    height: 150px;
+    width: 150px;
+}
+header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    float: left;
+    padding: 5px;
+}
+ul li a {
+    text-decoration: none;
+}
+
+.media .fa {
+    font-size: 20px;
+    color: #bbb;
+}
+.media .fa:hover {
+    color: #79cdf3;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+.slider img {
+    height: 350px;
+}
+
+section > div {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#products {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#form form {
+    width: 300px;
+}
+
+#form form button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#result table td {
+    text-align: right;
+}
+
+footer {
+    margin-top: 50px;
+    border-top: solid 2px #79cdf3;
+    background-color: #59c6f1;
+}
+footer #contact {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+footer #contact .info{
+    float: left;
+}
+footer #contact .info span {
+    display: block;
+}
+footer #contact .map {
+    float: right;
+}
+footer #contact .map iframe {
+    width: 250px;
+    height: 200px;
+}
