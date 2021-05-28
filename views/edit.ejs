@@ -23,75 +23,17 @@
 		</div>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#products">Productos</a></li>
-                <li><a href="#contact">Contacto</a></li>				
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/">Productos</a></li>
+                <li><a href="/">Contacto</a></li>				
                 <li><a href="/formulario">Formulario</a></li>
 				<li><a href="/edit">Editar</a></li>
             </ul>
         </nav>
     </header>
-    <div class="slider">
-		<div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			</div>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="./assets/images/pic-1.jpg" class="d-block w-100">
-				</div>
-				<div class="carousel-item">
-					<img src="./assets/images/pic-2.jpg" class="d-block w-100">
-				</div>
-				<div class="carousel-item">
-					<img src="./assets/images/pic-3.jpg" class="d-block w-100">
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-    </div>
     <section>
-		<div id="products">
-			<div class="card" style="width: 18rem;">
-				<img src="./assets/images/pic-4.jpg" class="card-img-top">
-				<div class="card-body">
-					<h5 class="card-title">Ponqué</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem;">
-				<img src="./assets/images/pic-5.jpg" class="card-img-top">
-				<div class="card-body">
-					<h5 class="card-title">Torta Fría</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
-			</div>
-		</div>
-    </section>
-	<section>
-		<div id="form">
-			<h3>Formulario</h3>
-			<form action="result.html" method="get">
-				<div class="form-group">
-					<label for="base">Base:</label>
-					<input type="number" class="form-control" id="base" name="base" pattern="[0-9]" required>
-				</div>
-				<button type="submit" class="btn btn-primary btn-block">Enviar</button>
-			</form>
-		</div>
-    </section>
-	<section>
 		<div>
-			<h2>Los registros en la BDD:</h2>
+			<h2>Seleccione registro a editar:</h2>
 			<table class="table">
 				<thead>
 					<tr>
@@ -100,6 +42,7 @@
 						<th>Apellido</th>
 						<th>Telefono</th>
 						<th>Comentarios</th>
+						<th>Acción</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -110,6 +53,7 @@
 							<td><%= listaRegistros[i].apellido %></td>
 							<td><%= listaRegistros[i].telefono %></td>
 							<td><%= listaRegistros[i].comentario %></td>
+							<td><a href="/edit/<%= listaRegistros[i]._id %>" class="btn btn-warning">Editar</a></td>
 						</tr>
 					<% } %>
 				</tbody>

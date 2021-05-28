@@ -48,7 +48,7 @@ app.put('/writeFile', (req, res) => {
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://Jaiver:PyCtAgLCfz9uXxGR@cluster0-shard-00-00.7eovb.mongodb.net:27017,cluster0-shard-00-01.7eovb.mongodb.net:27017,cluster0-shard-00-02.7eovb.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-aux9yu-shard-0&authSource=admin&retryWrites=true&w=majority',
+mongoose.connect('mongodb://Jaiver:PyCtAgLCfz9uXxGR@cluster0-shard-00-00.7eovb.mongodb.net:27017,cluster0-shard-00-01.7eovb.mongodb.net:27017,cluster0-shard-00-02.7eovb.mongodb.net:27017/prueba?ssl=true&replicaSet=atlas-aux9yu-shard-0&authSource=admin&retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true

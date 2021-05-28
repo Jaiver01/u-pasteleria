@@ -73,6 +73,20 @@ section > div {
     text-align: right;
 }
 
+#formRegistro {
+    width: 400px;
+}
+
+#formRegistro label {
+    width: 110px;
+    float: left;
+}
+
+#formRegistro input {
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
 footer {
     margin-top: 50px;
     border-top: solid 2px #79cdf3;
